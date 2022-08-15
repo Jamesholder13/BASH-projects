@@ -6,7 +6,7 @@
 
 #Use find command to display your path of possible old files
 find /home/admin/ -mtime +60 -exec rm {} \;
-if /home/admin/ps >= 0, then
+if [ $? -gt 0 ]; then
     echo 'Old files have been deleted!'
 else
     echo 'There were no old files to delete!'
